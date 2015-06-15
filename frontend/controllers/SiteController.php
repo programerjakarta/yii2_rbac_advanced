@@ -67,6 +67,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        // echo \Yii::$app->params['adminEmail'];exit;
+        // var_dump(\Yii::$app->extensions);exit;
+        // var_dump(\Yii::$app->layout);exit;
+        // var_dump(\Yii::$app->layoutPath);exit;
         return $this->render('index');
     }
 
