@@ -51,8 +51,49 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
             ]);
+                    
+        echo Nav::widget(
+            [
+                'encodeLabels' => false,
+                'options' => ['class' => 'sidebar-menu'],
+                'items' => [
+                    '<li class="header">Menu Yii2</li>',
+                    ['label' => '<i class="fa fa-file-code-o"></i><span>Gii</span>', 'url' => ['/gii']],
+                    ['label' => '<i class="fa fa-dashboard"></i><span>Debug</span>', 'url' => ['/debug']],
+                    [
+                        'label' => '<i class="glyphicon glyphicon-lock"></i><span>POST</span>', //for basic
+                        'url' => ['/site/login'],
+                        'visible' =>Yii::$app->user->can('createCity')
+                    ],
+                    [
+                        'label' => '<i class="glyphicon glyphicon-lock"></i><span>Sing in</span>', //for basic
+                        'url' => ['/site/login'],
+                        'visible' =>Yii::$app->user->can('createCitya')
+                    ],
+                    [
+                        'label' => '<i class="glyphicon glyphicon-lock"></i><span>Sing in</span>', //for basic
+                        'url' => ['/site/login'],
+                        'visible' =>Yii::$app->user->can('createCityb')
+                    ],
+                    [
+                        'label' => '<i class="glyphicon glyphicon-lock"></i><span>Sing in</span>', //for basic
+                        'url' => ['/site/login'],
+                        'visible' =>Yii::$app->user->can('createCitys')
+                    ],
+                    [
+                        'label' => '<i class="glyphicon glyphicon-lock"></i><span>Sing in</span>', //for basic
+                        'url' => ['/site/login'],
+                        'visible' =>Yii::$app->user->can('createCitydf')
+                    ],
+                ],
+            ]
+        );
+        
+
             NavBar::end();
         ?>
+
+
 
         <div class="container">
         <?= Breadcrumbs::widget([
